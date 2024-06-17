@@ -1,0 +1,108 @@
+/* reset margin, padding */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.red {
+    border: 1px solid red;
+}
+
+.green {
+    border: 1px solid green;
+}
+
+.banner {
+    height: 865px;
+    background: url(banner.jpg) center center no-repeat;
+    background-size: cover;
+    padding: 20px;
+}
+
+.banner .about-sign-in {
+    height: 79px;
+    width: 100%;
+    text-align: right;
+    /* box-sizing: border-box; */
+}
+
+.banner .about-sign-in .sign-in {
+    margin-right: 60px;
+    margin-left: 27px;
+    border: 1px solid green;
+    border-radius: 20px;
+    padding: 7px 14px;
+    color: green;
+}
+
+.banner .about-sign-in .about,
+.banner .about-sign-in .sign-in {
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.banner .about-sign-in .about {
+    color: black;
+}
+
+.banner .logo {
+    height: 90px;
+    background: url(hapoERP.png) center center no-repeat;
+    background-size: contain;
+    margin: 100px 0 50px 0;
+}
+
+.banner .content-center {
+    margin-bottom: 50px;
+}
+
+.banner .content-center .left,
+.banner .content-center .right,
+.banner .content-center .center {
+    width: 33%;
+    display: inline-block;
+    text-align: center;
+}
+
+.banner .content-center img,
+.banner .content-center img,
+.banner .content-center img {
+    margin-bottom: 15px;
+    width: 50px;
+    height: 50px;
+}
+
+.banner .content-center .left span,
+.banner .content-center .right span,
+.banner .content-center .center span {
+    display: block;
+    font-size: 30px;
+    text-align: center;
+}
+
+.banner .text {
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.banner .start-btn {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.banner .start-btn button {
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 7px 14px;
+    color: white;
+    border: 1px solid black;
+    background-color: #46b446;
+    border-radius: 20px;
+    cursor: pointer;
+}

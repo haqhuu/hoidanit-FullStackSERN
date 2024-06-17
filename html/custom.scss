@@ -1,0 +1,106 @@
+/* reset margin, padding */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.red {
+    border: 1px solid red;
+}
+
+.green {
+    border: 1px solid green;
+}
+
+
+.banner {
+    height: 865px;
+    background: url(banner.jpg) center center no-repeat;
+    background-size: cover;
+    padding: 20px;
+
+    .about-sign-in {
+        height: 79px;
+        width: 100%;
+        text-align: right;
+
+        /* box-sizing: border-box; */
+        .sign-in {
+            margin-right: 60px;
+            margin-left: 27px;
+            border: 1px solid green;
+            border-radius: 20px;
+            padding: 7px 14px;
+            color: green;
+        }
+
+        .about,
+        .sign-in {
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        .about {
+            color: black;
+        }
+    }
+
+    .logo {
+        height: 90px;
+        background: url(hapoERP.png) center center no-repeat;
+        background-size: contain;
+        margin: 100px 0 50px 0;
+    }
+
+    .content-center {
+        margin-bottom: 50px;
+
+        .left,
+        .right,
+        .center {
+            width: 33%;
+            display: inline-block;
+            text-align: center;
+
+            img {
+                margin-bottom: 15px;
+                width: 50px;
+                height: 50px;
+
+            }
+
+            span {
+                display: block;
+                font-size: 30px;
+                text-align: center;
+            }
+        }
+    }
+
+    .text {
+        text-align: center;
+        font-size: 30px;
+        font-style: italic;
+        margin-bottom: 20px
+    }
+
+    .start-btn {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+
+        button {
+            margin-top: 10px;
+            text-transform: uppercase;
+            font-size: 20px;
+            padding: 7px 14px;
+            color: white;
+            border: 1px solid black;
+            background-color: rgb(70, 180, 70);
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    }
+}
