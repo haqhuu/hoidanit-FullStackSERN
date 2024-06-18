@@ -4,9 +4,7 @@ import CRUDService from '../services/CRUDServices';
 let getHomepage = async (req, res) => {
     try {
         let data = await db.User.findAll();
-        console.log("----------------------------");
-        console.log(data);
-        console.log("----------------------------");
+
         return res.render("homepage.ejs", {
             data: JSON.stringify(data)
         });
@@ -25,4 +23,15 @@ let postCRUD = async (req, res) => {
     return res.send("crud sv");
 }
 
-export default { getHomepage, getCRUD, postCRUD };
+let displayGetCRUD = async (req, res) => {
+    let data = await CRUDService.getAllUser();
+    console.log("----------------------------");
+    console.log(data);
+    console.log("----------------------------");
+    return res.render("displayCRUD.ejs", { dataTable: data });
+}
+
+export default {
+    getHomepage, getCRUD, postCRUD,
+    displayGetCRUD
+};
