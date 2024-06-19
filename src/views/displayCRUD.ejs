@@ -23,6 +23,26 @@
         tr:nth-child(even) {
             background-color: #dddddd;
         }
+
+        button.btn-edit {
+            background: orange;
+            outline: none;
+            border: none;
+            height: 25px;
+            width: 60px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button.btn-delete {
+            background: red;
+            outline: none;
+            border: none;
+            height: 25px;
+            width: 60px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
     </style>
 
 </head>
@@ -35,6 +55,7 @@
             <th>fist name</th>
             <th>last name</th>
             <th>address</th>
+            <th>actions</th>
         </tr>
         <% for (let i=0; i< dataTable.length; i++ ) {%>
             <tr>
@@ -49,6 +70,14 @@
                 </td>
                 <td>
                     <%= dataTable[i].address %>
+                </td>
+                <td>
+                    <button type="button" class="btn-edit">
+                        <a href="/edit-crud?id=<%= dataTable[i].id %>">Edit</a>
+                    </button>
+                    <button type="button" class="btn-delete">
+                        <a href="">Delete</a>
+                    </button>
                 </td>
             </tr>
             <% } %>

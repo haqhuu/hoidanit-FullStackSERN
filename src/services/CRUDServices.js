@@ -17,7 +17,7 @@ let createNewUser = async (data) => {
                 password: hashPasswordFromBcrypt,
                 phoneNumber: data.phoneNumber
             })
-            resolve(data.roleId);
+            resolve("Data valid. Success added !");
         } catch (e) {
             reject(e);
         }
@@ -32,8 +32,6 @@ let hashUserPassword = (password) => {
         } catch (e) {
             reject(e);
         }
-
-
     })
 }
 
@@ -49,10 +47,47 @@ let getAllUser = () => {
             reject(e);
         }
     })
+}
 
+let getUserInforById = (userId) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let user = await db.User.findOne({
+                where: { id: userId }, raw: true
+            });
+            if (user) {
+                resolve(user);
+            }
+        } catch (e) {
+            resolve({});
+        }
+    })
+}
 
+let updataUserData = (data) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let user = await db.User.findOne({
+                where: { id: data.id }
+            })
+            if (user) {
+                user.firstName = data.firstName;
+                user.lastName = data.lastName;
+                user.address = data.address;
+                await user.save();
+                let allUsers = await db.User.findAll();
+                resolve(allUsers);
+            } else {
+
+            }
+            resolve();
+        } catch (e) {
+            console.log(e);
+        }
+    })
 }
 
 export default {
-    createNewUser, getAllUser
+    createNewUser, getAllUser,
+    getUserInforById, updataUserData
 }
