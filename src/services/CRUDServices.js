@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 import db from '../models/index';
-import user from '../models/user';
+
 const salt = bcrypt.genSaltSync(10);
 
 let createNewUser = async (data) => {
@@ -78,16 +78,30 @@ let updataUserData = (data) => {
                 let allUsers = await db.User.findAll();
                 resolve(allUsers);
             } else {
-
+                resolve();
             }
-            resolve();
+
         } catch (e) {
             console.log(e);
         }
     })
 }
 
+let deleteUserById = (userId) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let user = await db.User.destroy({
+                where:
+                    { id: userId }
+            })
+            resolve(); // return
+        } catch (e) {
+            reject(e);
+        }
+    })
+}
+
 export default {
     createNewUser, getAllUser,
-    getUserInforById, updataUserData
+    getUserInforById, updataUserData, deleteUserById
 }

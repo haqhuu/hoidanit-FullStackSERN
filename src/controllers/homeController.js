@@ -47,7 +47,18 @@ let putCRUD = async (req, res) => {
         dataTable: allUsers
     });
 }
+
+let deleteCRUD = async (req, res) => {
+    let id = req.query.id;
+    if (id) {
+        await CRUDService.deleteUserById(id);
+        return res.send("deleted user in db (^.^)");
+    } else {
+        res.send("User not f");
+    }
+}
+
 export default {
     getHomepage, getCRUD, postCRUD,
-    displayGetCRUD, getEditCRUD, putCRUD
+    displayGetCRUD, getEditCRUD, putCRUD, deleteCRUD
 };

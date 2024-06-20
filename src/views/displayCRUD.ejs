@@ -72,12 +72,14 @@
                     <%= dataTable[i].address %>
                 </td>
                 <td>
-                    <button type="button" class="btn-edit">
-                        <a href="/edit-crud?id=<%= dataTable[i].id %>">Edit</a>
-                    </button>
-                    <button type="button" class="btn-delete">
-                        <a href="">Delete</a>
-                    </button>
+                    <a href="/edit-crud?id=<%= dataTable[i].id %>">
+                        <button type="button" class="btn-edit">
+                            Edit
+                        </button></a>
+                    <a href="/delete-crud?id=<%= dataTable[i].id %>">
+                        <button type="button" class="btn-delete">
+                            Delete
+                        </button></a>
                 </td>
             </tr>
             <% } %>
