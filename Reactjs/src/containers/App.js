@@ -5,13 +5,14 @@ import { ConnectedRouter as Router } from 'connected-react-router';
 import { history } from '../redux'
 import { ToastContainer } from 'react-toastify';
 
-
 import { userIsAuthenticated, userIsNotAuthenticated } from '../hoc/authentication';
 
 import { path } from '../utils'
 
 import Home from '../routes/Home';
-import Login from '../routes/Login';
+// import Login from '../routes/Login';
+import Login from './Auth/Login';
+
 import Header from './Header/Header';
 import System from '../routes/System';
 
