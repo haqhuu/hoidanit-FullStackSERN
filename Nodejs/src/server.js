@@ -3,10 +3,12 @@ import bodyParser from "body-parser";
 import viewEngine from "./config/viewEngine";
 import initWebRoutes from "./route/web";
 import connectDB from "./config/connectDB";
+import cors from 'cors';
 
 require("dotenv").config();
 
-const app = express()
+const app = express();
+app.use(cors({ credentials: true, origin: true }));
 const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
