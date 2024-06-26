@@ -44,18 +44,13 @@ let handleGetAllUsers = async (req, res) => {
 }
 
 let handleCreateNewUser = async (req, res) => {
-    console.log("handleCreateNewUser start")
     let message = await userService.createNewUser(req.body);
-    console.log(message);
-    console.log("handleCreateNewUser end")
     return res.status(200).json(message);
 }
 
 let handleEditUser = async (req, res) => {
-
     let data = req.body;
     let message = await userService.updateUserData(data);
-    console.log(message);
     return res.status(200).json(message);
 }
 

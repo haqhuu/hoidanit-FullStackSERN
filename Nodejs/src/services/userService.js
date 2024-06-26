@@ -14,7 +14,6 @@ let hashUserPassword = (password) => {
     })
 }
 
-
 let handleUserLogin = (email, password) => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -112,9 +111,7 @@ let getAllUsers = (userId) => {
 let createNewUser = (data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            console.log("start check emao")
             let check = await checkUserEmail(data.email);
-            console.log("if")
             if (check === true) {
                 resolve({
                     errCode: 1,
@@ -151,7 +148,6 @@ let createNewUser = (data) => {
 let updateUserData = (data) => {
     return new Promise(async (resolve, reject) => {
         try {
-
             if (!data.id) {
                 resolve({
                     errCode: 4,
@@ -171,7 +167,7 @@ let updateUserData = (data) => {
 
                 resolve({
                     errCode: 0,
-                    message: 'The user is updated'
+                    errMessage: 'The user is updated'
                 })
             }
             resolve({
@@ -181,12 +177,11 @@ let updateUserData = (data) => {
         } catch (e) {
             reject({
                 errCode: 3,
-                message: e.message
+                errMessage: e.message
             })
         }
     })
 }
-
 
 let deleteUser = (userId) => {
     return new Promise(async (resolve, reject) => {
