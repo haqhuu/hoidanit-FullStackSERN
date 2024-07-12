@@ -53,10 +53,11 @@ class ModalUser extends Component {
         return isValid
     }
 
-    handleAddNewUser = () => {
-        let ok = this.checkValidInput()
-        console.log("isValid: ", ok)
-        console.log("new: ", this.state)
+    handleAddNewUser = async () => {
+        let isValid = this.checkValidInput()
+        if (isValid === true) {
+            await this.props.createNewUser(this.state)
+        }
     }
 
     render() {

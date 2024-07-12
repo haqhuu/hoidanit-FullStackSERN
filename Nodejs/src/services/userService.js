@@ -117,6 +117,7 @@ let createNewUser = (data) => {
                     errCode: 1,
                     message: 'U email has alredy in used. Try another email!'
                 })
+                return (resolve)
             }
 
             let hashPasswordFromBcrypt = await hashUserPassword(data.password);
@@ -136,6 +137,7 @@ let createNewUser = (data) => {
                 errCode: 0,
                 message: 'OK'
             });
+            return (resolve)
         } catch (e) {
             reject({
                 errCode: 3,
