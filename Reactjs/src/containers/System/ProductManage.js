@@ -10,13 +10,11 @@ class ProductManage extends Component {
     componentDidMount() {
     }
 
-
     render() {
         return (
             <div className="text-center" >Manage products</div>
         )
     }
-
 }
 
 const mapStateToProps = state => {

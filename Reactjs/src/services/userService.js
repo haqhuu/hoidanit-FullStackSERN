@@ -11,12 +11,21 @@ const getAllUsers = (inputId) => {
     return axios.get(`/api/get-all-users?id=${inputId}`)
 }
 
-const createNewUserFromReact = (data) => {
+const createNewUserService = (data) => {
     return axios.post(`/api/create-new-user`, data)
+}
+
+const deleteUserService = (inputId) => {
+    return axios.delete(`/api/delete-user`, {
+        data: {
+            id: inputId
+        }
+    })
 }
 
 export {
     handleLoginApi,
     getAllUsers,
-    createNewUserFromReact
+    createNewUserService,
+    deleteUserService
 }

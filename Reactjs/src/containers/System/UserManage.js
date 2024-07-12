@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import './UserManage.scss';
-import { getAllUsers, createNewUserFromReact } from '../../services/userService';
+import {
+    getAllUsers, createNewUserService,
+    deleteUserService
+} from '../../services/userService';
 import ModalUser from './ModalUser';
+import { emitter } from '../../utils/emitter'
 
 class UserManage extends Component {
 
@@ -35,7 +39,7 @@ class UserManage extends Component {
 
     createNewUser = async (data) => {
         try {
-            let response = await createNewUserFromReact(data)
+            let response = await createNewUserService(data)
 
             if (response && response.errCode !== 0) {
                 alert(response.message)
@@ -45,17 +49,23 @@ class UserManage extends Component {
                     isOpenModalUser: false
                 })
             }
+            emitter.emit("EVENT_CLEAR_MODAL_DATA")
         } catch (e) {
-            alert(e.message)
+            console.log(e.message)
         }
     }
 
     getAllUsersFromReact = async () => {
         let response = await getAllUsers('ALL');
-        if (response && response.errCode === 0) {
-            this.setState({
-                arrUsers: response.users
-            })
+
+        try {
+            if (response && response.errCode === 0) {
+                this.setState({
+                    arrUsers: response.users
+                })
+            }
+        } catch (e) {
+            console.log(e.message)
         }
     }
 
@@ -63,6 +73,20 @@ class UserManage extends Component {
         this.setState({
             isOpenModalUser: !this.state.isOpenModalUser
         })
+    }
+
+    deleteUser = async (user) => {
+        try {
+            let response = await deleteUserService(user.id)
+
+            if (response && response.errCode === 0) {
+                await this.getAllUsersFromReact()
+            } else {
+                alert(response.message)
+            }
+        } catch (e) {
+            console.log(e.message)
+        }
     }
 
     render() {
@@ -103,7 +127,8 @@ class UserManage extends Component {
                                             <td>
                                                 <button className='btn-edit'>
                                                     <i className="fa fa-file" aria-hidden="true"></i></button>
-                                                <button className='btn-delete'>
+                                                <button className='btn-delete'
+                                                    onClick={() => { this.deleteUser(item) }} >
                                                     <i className="fa fa-trash">
                                                     </i></button>
                                             </td>
