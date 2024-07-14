@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import './UserManage.scss';
 import {
     getAllUsers, createNewUserService,
-    deleteUserService
+    deleteUserService, editUserService
 } from '../../services/userService';
 import ModalUser from './ModalUser';
+import ModalEditUser from './ModalEditUser'
 import { emitter } from '../../utils/emitter'
 
 class UserManage extends Component {
@@ -15,7 +16,9 @@ class UserManage extends Component {
         super(props);
         this.state = {
             arrUsers: [],
-            isOpenModalUser: false
+            isOpenModalUser: false,
+            isOpenModalEditUser: false,
+            userEdit: {}
         }
     }
 
@@ -37,6 +40,30 @@ class UserManage extends Component {
         })
     }
 
+    handleEditUser = (user) => {
+        this.setState({
+            isOpenModalEditUser: true,
+            userEdit: user
+        })
+    }
+
+    doEditUser = async (user) => {
+        try {
+            let response = await editUserService(user)
+
+            if (response && response.errCode === 0) {
+                this.setState({
+                    isOpenModalEditUser: false
+                })
+            } else {
+                alert(response.message)
+            }
+            await this.getAllUsersFromReact()
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
     createNewUser = async (data) => {
         try {
             let response = await createNewUserService(data)
@@ -51,7 +78,7 @@ class UserManage extends Component {
             }
             emitter.emit("EVENT_CLEAR_MODAL_DATA")
         } catch (e) {
-            console.log(e.message)
+            console.log(e)
         }
     }
 
@@ -65,13 +92,19 @@ class UserManage extends Component {
                 })
             }
         } catch (e) {
-            console.log(e.message)
+            console.log(e)
         }
     }
 
     toggleUserModal = () => {
         this.setState({
             isOpenModalUser: !this.state.isOpenModalUser
+        })
+    }
+
+    toggleEditUserModal = () => {
+        this.setState({
+            isOpenModalEditUser: !this.state.isOpenModalEditUser
         })
     }
 
@@ -85,7 +118,7 @@ class UserManage extends Component {
                 alert(response.message)
             }
         } catch (e) {
-            console.log(e.message)
+            console.log(e)
         }
     }
 
@@ -98,6 +131,16 @@ class UserManage extends Component {
                     toggleFromParent={this.toggleUserModal}
                     createNewUser={this.createNewUser}
                 />
+                {
+                    this.state.isOpenModalEditUser &&
+                    <ModalEditUser
+                        isOpen={this.state.isOpenModalEditUser}
+                        toggleFromParent={this.toggleEditUserModal}
+                        currentUser={this.state.userEdit}
+                        editUser={this.doEditUser}
+                    />
+                }
+
                 <div className="title text-center">Manage users</div>
                 <div className='mx-1'>
                     <button className='btn btn-primary px-3' onClick={
@@ -117,7 +160,6 @@ class UserManage extends Component {
                             </tr>
                             {
                                 arrUsers && arrUsers.map((item, index) => {
-                                    console.log('chek map', item, ' ', index)
                                     return (
                                         <tr key={index}>
                                             <td>{item.email}</td>
@@ -125,7 +167,8 @@ class UserManage extends Component {
                                             <td>{item.lastName}</td>
                                             <td>{item.address}</td>
                                             <td>
-                                                <button className='btn-edit'>
+                                                <button className='btn-edit'
+                                                    onClick={() => { this.handleEditUser(item) }}>
                                                     <i className="fa fa-file" aria-hidden="true"></i></button>
                                                 <button className='btn-delete'
                                                     onClick={() => { this.deleteUser(item) }} >

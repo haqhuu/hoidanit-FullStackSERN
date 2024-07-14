@@ -153,7 +153,7 @@ let updateUserData = (data) => {
             if (!data.id) {
                 resolve({
                     errCode: 4,
-                    errMessage: `Missinf parameter`
+                    errMessage: `Missing parameter`
                 })
             }
             let user = await db.User.findOne({
