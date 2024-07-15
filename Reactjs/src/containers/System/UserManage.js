@@ -31,7 +31,6 @@ class UserManage extends Component {
      *  1. Run constructor->init state
      *  2. Run Did mount (seState)
      *  3. Render
-     * 
      */
 
     handleAddNewUser = () => {

@@ -35,7 +35,6 @@ let hashUserPassword = (password) => {
     })
 }
 
-
 let getAllUser = () => {
     return new Promise((resolve, reject) => {
         try {
