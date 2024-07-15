@@ -12,17 +12,16 @@
 }
 
 .home-header-container{
-    margin: 0 50px;
-
-    .home-header-content{
+    .home-header-content {
         height: 60px;
         width: 100%;
         display: flex;
-    
+        padding: 0 50px;
+
         .left-content{
             width: 25%;
             height: 100%;
-            background: url(../../assets/bookingcare-2020.svg) center center no-repeat;  
+            background: url(../../assets/bookingcare-2020.svg) center center  no-repeat;  
             display: flex;
             align-items: center;
     
@@ -67,6 +66,106 @@
             }
             .language {
                 margin-left: 10px
+            }
+        }
+    }
+    
+
+}
+
+.home-header-banner {
+    background: url(../../assets/background-header.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 750px;
+    width: 100%;
+
+    display:flex;
+    flex-direction: column;
+    
+    .content-up {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+
+        .text1{
+            color: white;
+            font-family: 'Arial Narrow', Arial, sans-serif;
+            font-size: 30px;
+            text-transform: uppercase;
+            text-shadow: 0 0 3px #000000;
+            margin-top: 70px;
+            margin-bottom: 5px;
+        }
+
+        .text2{
+            color: white;
+            font-family: 'Arial Narrow', Arial, sans-serif;
+            font-size: 30px;
+            text-transform: uppercase;
+            text-shadow: 0 0 3px #000000;
+            margin-bottom: 50px;
+        }
+        
+        .search {
+            font-size: 20px;
+            padding: 10px 15px;
+            background: #fecd00;
+            border-radius: 30px;
+
+            .fas {
+                margin: 0 10px;
+            }
+
+            .search-input {
+                width: 400px;
+                border: none;
+                outline: none;
+                background: transparent;
+            }
+        }
+    }    
+
+    .content-down{
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        align-items: flex-end;
+        
+        .child-content {
+            display: flex;
+            flex-direction: column;
+            // justify-content: center;
+            justify-content: end;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 80px;
+            // height: 150px;
+            margin: 0 25px;
+
+            .child-icon {
+                background-color: white;
+                border-radius: 30px;
+                width: 50px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                .fas {
+                    font-size: 30px;
+                }
+            }
+            .subscript {
+                font-size: 14px;
+                font-weight: 500;
+                height: 80px;
+                justify-content: center;
+                text-align: center;
             }
         }
     }
