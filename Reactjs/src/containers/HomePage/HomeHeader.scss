@@ -13,15 +13,14 @@
 
 .home-header-container{
     .home-header-content {
-        height: 60px;
+        height: 80px;
         width: 100%;
         display: flex;
-        padding: 0 50px;
+        padding: 0 100px;
 
         .left-content{
             width: 25%;
             height: 100%;
-            background: url(../../assets/bookingcare-2020.svg) center center  no-repeat;  
             display: flex;
             align-items: center;
     
@@ -29,13 +28,27 @@
                 cursor: pointer;
                 font-size: 25px;
                 color: gray;
+                margin-right: 15px;
             }
 
-            .header-logo{
-                width: 100%;
-                height: 100%;
+            .header-logo-container {
+                width: 60%;
+                height: 70%;
+
+                .header-logo{
+                    width: 100%;
+                    height: 100%;
+                    background: url(../../assets/bookingcare-2020.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;  
+                    background-size: contain;
+
+                    cursor: pointer;
+                }
             }
+
         }
+
         .center-content{
             width: 50%;
             height: 100%;
@@ -43,8 +56,8 @@
             align-items: center;
             justify-content: space-between;
 
-            .child-content {
-                .text {
+            .header-option {
+                .text-up {
                     font-weight: 600;
                 }
                 .subscript{
@@ -59,33 +72,38 @@
             height: 100%;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-end;
 
             .help-text {
                 margin-right: 10px
             }
-            .language {
+
+            .language-vi {
+                margin-left: 10px
+            }
+
+            .language-en {
                 margin-left: 10px
             }
         }
     }
-    
-
 }
 
 .home-header-banner {
-    background: url(../../assets/background-header.jpg) ;
+    // background-image: url(../../assets/background-header.jpg);
+    background: linear-gradient( rgba(255, 255, 255, 0.1),
+     rgba(255, 255, 255, 0.1)),
+    url(../../assets/background-header.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 750px;
     width: 100%;
-
     display:flex;
     flex-direction: column;
     
     .content-up {
-        height: 50%;
+        height: 75%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -96,8 +114,8 @@
             font-family: 'Arial Narrow', Arial, sans-serif;
             font-size: 30px;
             text-transform: uppercase;
-            text-shadow: 0 0 3px #000000;
-            margin-top: 70px;
+            text-shadow: 1px 1px 1px #333;
+            margin-top: 80px;
             margin-bottom: 5px;
         }
 
@@ -107,7 +125,7 @@
             font-size: 30px;
             text-transform: uppercase;
             text-shadow: 0 0 3px #000000;
-            margin-bottom: 50px;
+            margin-bottom: 70px;
         }
         
         .search {
@@ -121,33 +139,42 @@
             }
 
             .search-input {
-                width: 400px;
+                width: 420px;
                 border: none;
                 outline: none;
                 background: transparent;
             }
+
+            // input::placeholder {
+            //     font-weight: bold;
+            //     opacity: 0.5;
+            //     color: red;
+            //   }
         }
     }    
 
     .content-down{
-        height: 50%;
+        height: 25%;
         display: flex;
         justify-content: center;
         gap: 50px;
         align-items: flex-end;
         
-        .child-content {
+        background: linear-gradient( rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.9), white);
+
+        .down-option {
             display: flex;
             flex-direction: column;
             // justify-content: center;
             justify-content: end;
             align-items: center;
             flex-wrap: wrap;
-            width: 80px;
+            width: 100px;
             // height: 150px;
             margin: 0 25px;
 
-            .child-icon {
+            .option-icon {
                 background-color: white;
                 border-radius: 30px;
                 width: 50px;
@@ -155,17 +182,27 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                
+                box-shadow: 1px 1px 10px #b9b5b5;
+
                 .fas {
                     font-size: 30px;
+                    color: #7bd4f0;
+
+
                 }
             }
-            .subscript {
+            .option-subscript {
                 font-size: 14px;
                 font-weight: 500;
-                height: 80px;
+                height: 50px;
                 justify-content: center;
                 text-align: center;
+
+                cursor: pointer;
+
+                &:hover {
+                    color: #06a4d4;
+                }
             }
         }
     }

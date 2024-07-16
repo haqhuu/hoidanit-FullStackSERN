@@ -1,4 +1,26 @@
 {
+    "home-header": {
+        "specialty": "Speciatly",
+        "search-doctor": "Find a doctor by spetialty",
+        "facility": "Health facility",
+        "select-room": "Select hospital room",
+        "doctor": "Doctor",
+        "select-good-doctor": "Select a good doctor",
+        "fee": "Choose package",
+        "check-health": "Check health",
+        "help": "Help"
+    },
+    "banner": {
+        "text1": "Medical platform",
+        "text2": "Health care",
+        "search-package": "Search a package",
+        "professional-diagnosis": "Professional diagnosis",
+        "far-diagnosis": "Dianosis from far",
+        "general-check": "General health check",
+        "laboratory-medicine": "Laboratory medicine technique",
+        "mental-health": "Mental heath",
+        "examine-dental": "Examine dental"
+    },
     "common": {
         "add": "Add",
         "edit": "Edit",
