@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './HomeHeader.scss'
 import { FormattedMessage } from 'react-intl';
+import { LANGUAGES } from '../../utils/constant'
+import { changeLanguage } from '../../store/actions/appActions';
 
 class HomeHeader extends Component {
+    changeLanguage = (language) => {
+
+        this.props.changeLanguageRedux(language)
+    }
 
     render() {
         return (
@@ -38,8 +44,12 @@ class HomeHeader extends Component {
                             <i className="fas fa-question-circle"></i>
                             <span className='help-text'><FormattedMessage id='home-header.help' /></span>
                             <span>|</span>
-                            <div className='language-vi'>VN</div>
-                            <div className='language-en'>EN</div>
+                            <div className={this.props.language === LANGUAGES.VI ? 'language-vi active' : 'language-vi'}>
+                                <span onClick={() => { this.changeLanguage(LANGUAGES.VI) }}>VN</span>
+                            </div>
+                            <div className={this.props.language === LANGUAGES.EN ? 'language-en active' : 'language-en'}>
+                                <span onClick={() => { this.changeLanguage(LANGUAGES.EN) }}>EN</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -106,7 +116,7 @@ class HomeHeader extends Component {
                                 <i className="fas fa-user-md"></i>
                             </div>
                             <div className='option-subscript'>
-                                <FormattedMessage id='banner.professional-diagnosis' />
+                                <FormattedMessage id='banner.examine-dental' />
                             </div>
                         </div>
                     </div>
@@ -125,6 +135,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        changeLanguageRedux: (language) => dispatch(changeLanguage(language))
     };
 };
 

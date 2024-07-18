@@ -13,8 +13,9 @@
     "banner": {
         "text1": "Nền tảng y tế",
         "text2": "chăm sóc sức khỏe toàn diện",
-        "search-package": "Tìm gói khám",
+        "search-package": "Tìm gói khám ",
         "professional-diagnosis": "Khám chuyên khoa",
+        "far-diagnosis": "Khám từ xa",
         "general-check": "Khám sức khỏe tổng quát",
         "laboratory-medicine": "Xét nghiệm y học",
         "mental-health": "Sức khỏe tinh thần",

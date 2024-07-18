@@ -79,11 +79,25 @@
             }
 
             .language-vi {
-                margin-left: 10px
+                margin-left: 10px;
+                cursor: pointer;
+                opacity: 0.5;
+
+                &.active, &:hover {
+                    opacity: 1;
+                    color: rgb(245, 131, 24);
+                }
             }
 
             .language-en {
-                margin-left: 10px
+                margin-left: 10px;
+                cursor: pointer;
+                opacity: 0.5;
+
+                &.active, &:hover {
+                    opacity: 1;
+                    color: rgb(245, 131, 24);
+                }
             }
         }
     }
