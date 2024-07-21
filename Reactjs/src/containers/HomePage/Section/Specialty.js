@@ -18,51 +18,59 @@ class Specialty extends Component {
             <>
                 <div className='specialty-section green'>
                     <div className='specialty-container red'>
-                        <Slider {...settings}>
-                            <div className='specialty-body'>
-                                <div className='img-customize  red'>
-                                </div>
-                                <div className='text-customize  red'>
-                                    <span> Cơ xương khớp 1</span>
-                                </div>
-                            </div>
 
-                            <div className='specialty-body'>
-                                <div className='img-customize  red'>
+                        <div className='specialty-header'>
+
+                            <span className='title-section'>Chuyên khoa phổ biến</span>
+
+                            <button className='btn-section'> Xem thêm</button>
+                        </div>
+                        <div className='specialty-body'>
+                            <Slider {...settings}>
+                                <div className='specialty-customize'>
+                                    <div className='bg-img red'></div>
+                                    <div className='text-customize  red'>
+                                        <span> Cơ xương khớp 1</span>
+                                    </div>
                                 </div>
-                                <div className='text-customize  red'>
-                                    <span> Cơ xương khớp 2</span>
+
+                                <div className='specialty-customize'>
+                                    <div className='bg-img red'>
+                                    </div>
+                                    <div className='text-customize  red'>
+                                        <span> Cơ xương khớp 2</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className='specialty-body'>
-                                <div className='img-customize  red'>
+                                <div className='specialty-customize'>
+                                    <div className='bg-img red'>
+                                    </div>
+                                    <div className='text-customize  red'>
+                                        <span> Cơ xương khớp 3</span>
+                                    </div>
                                 </div>
-                                <div className='text-customize  red'>
-                                    <span> Cơ xương khớp 3</span>
+                                <div className='specialty-customize'>
+                                    <div className='bg-img red'>
+                                    </div>
+                                    <div className='text-customize  red'>
+                                        <span> Cơ xương khớp 4</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className='specialty-body'>
-                                <div className='img-customize  red'>
+                                <div className='specialty-customize'>
+                                    <div className='bg-img red'>
+                                    </div>
+                                    <div className='text-customize  red'>
+                                        <span> Cơ xương khớp 5</span>
+                                    </div>
                                 </div>
-                                <div className='text-customize  red'>
-                                    <span> Cơ xương khớp 4</span>
+                                <div className='specialty-customize'>
+                                    <div className='bg-img red'>
+                                    </div>
+                                    <div className='text-customize  red'>
+                                        <span> Cơ xương khớp 6</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className='specialty-body'>
-                                <div className='img-customize  red'>
-                                </div>
-                                <div className='text-customize  red'>
-                                    <span> Cơ xương khớp 5</span>
-                                </div>
-                            </div>
-                            <div className='specialty-body'>
-                                <div className='img-customize  red'>
-                                </div>
-                                <div className='text-customize  red'>
-                                    <span> Cơ xương khớp 6</span>
-                                </div>
-                            </div>
-                        </Slider>
+                            </Slider>
+                        </div>
                     </div>
                 </div>
             </>
