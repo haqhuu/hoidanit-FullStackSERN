@@ -1,13 +1,67 @@
-.Specialty-section {
-    height: 330px
+.specialty-section {
+    height: 330px;
+
+    .specialty-container {
+        margin: 0 100px;
+    }
+
+    .specialty-body {
+    
+
+        .img-customize{
+
+            background: url(../../../assets/specialty/co-xuong-khop.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 280px;
+            height: 150px;
+            
+        }
+    }
 }
 
 .slick-prev{
-    background-color: red !important;
-    position: relative !important;
-    left: 0 !important;
+    width: 40px !important;
+    height: 40px !important;
+    background-color: #f0f0f0 !important;
+    border: 1px solid #ededed;
+    opacity: 0.5;
+    z-index: 1000 !important;
+    left: -10px !important;
+
+    &:hover {
+        opacity: 1;
+    }
 }
+
 .slick-next{
-    background-color: blue !important;
-    right: 0 !important;
+    width: 40px !important;
+    height: 40px !important;
+    background-color: #f0f0f0 !important;
+    border: 1px solid #ededed;
+    opacity: 0.5;
+    z-index: 1000 !important;
+    right: -10px !important;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.slick-prev:before {
+    color: #2b0404 !important;
+    content: "<" !important; /* FontAwesome Unicode */
+    // content: "&#xf061" !important;
+    height: 100% !important;
+    width: 100% !important;
+
+}
+
+.slick-next:before {
+    color: #2b0404 !important;
+    content: ">" !important; /* FontAwesome Unicode */
+    // content: "&#xf061" !important;
+    height: 100% !important;
+    width: 100% !important;
 }
