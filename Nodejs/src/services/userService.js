@@ -83,7 +83,7 @@ let getAllUsers = (userId) => {
         try {
             let users = '';
             if (userId === 'ALL') {
-                users = db.User.findAll({
+                users = await db.User.findAll({
                     attributes: {
                         exclude: ['password']
                     }
@@ -213,10 +213,37 @@ let deleteUser = (userId) => {
     })
 }
 
+let getAllCodeService = (typeInput) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            if (!typeInput) {
+                return resolve({
+                    errCode: 1,
+                    errMessage: "Missing required parameters!"
+                })
+            } else {
+                let res = {}
+                let allcode = await db.Allcode.findAll({
+                    where: {
+                        type: typeInput
+                    }
+                });
+                res.errCode = 0;
+                res.data = allcode;
+
+                return resolve(res)
+            }
+        } catch (e) {
+            return reject(e);
+        }
+    })
+}
+
 export default {
     handleUserLogin,
     getAllUsers,
     createNewUser,
     updateUserData,
-    deleteUser
+    deleteUser,
+    getAllCodeService
 }
