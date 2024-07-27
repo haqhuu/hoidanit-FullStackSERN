@@ -13,15 +13,21 @@ class Header extends Component {
 
         return (
             <div className="header-container">
-                {/* thanh navigator */}
+                {/*  navigator bar */}
                 <div className="header-tabs-container">
                     <Navigator menus={adminMenu} />
                 </div>
 
-                {/* nút logout */}
-                <div className="btn btn-logout" onClick={processLogout}>
-                    <i className="fas fa-sign-out-alt"></i>
+                <div className='languages'>
+                    <span className='language-vi'>VI</span>
+                    <span className='language-en'>EN</span>
+                    {/* logout button*/}
+                    <div className="btn btn-logout" onClick={processLogout} title="Logout">
+                        <i className="fas fa-sign-out-alt"></i>
+                    </div>
                 </div>
+
+
             </div>
         );
     }

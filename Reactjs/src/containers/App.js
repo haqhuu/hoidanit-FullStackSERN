@@ -49,7 +49,7 @@ class App extends Component {
 
                     <div className="main-container">
                         <ConfirmModal />
-                        {this.props.isLoggedIn && <Header />}
+
 
                         <div className="content-container">
                             <CustomScrollbars style={{ height: '100vh', width: '100%' }}>
