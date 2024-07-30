@@ -6,8 +6,8 @@ import { LANGUAGES } from '../../utils/constant'
 import { changeLanguage } from '../../store/actions/appActions';
 
 class HomeHeader extends Component {
-    changeLanguage = (language) => {
 
+    changeLanguage = (language) => {
         this.props.changeLanguageRedux(language)
     }
 
