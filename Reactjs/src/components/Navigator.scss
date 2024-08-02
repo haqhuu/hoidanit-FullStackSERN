@@ -30,6 +30,13 @@
             position: absolute;
             padding: 0;
             .menu {
+
+                &.active {
+                    background-color: #bebebe;
+                    a {
+                        color: orange;
+                    }
+                }
                 width: 205px;
                 padding: 0 15px;
                 height: 35px;

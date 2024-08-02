@@ -12,6 +12,7 @@ class HomeHeader extends Component {
     }
 
     render() {
+        console.log("check, user, in4:", this.props.userInfo)
         return (
             <>
                 <div className='home-header-container'>
@@ -129,6 +130,7 @@ class HomeHeader extends Component {
 const mapStateToProps = state => {
     return {
         language: state.app.language,
+        userInfo: state.user.userInfo,
         isLoggedIn: state.user.isLoggedIn
     };
 };
